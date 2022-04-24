@@ -43,7 +43,7 @@
                         <img class="star" src="{{ asset('assets/images/star.png') }}">
                         <p class="text-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
-                    <form class="form-datve">
+                    <form class="form-datve" action="{{ URL::to('/save-cart') }}">
                         <select>
                             <option>Value 1</option>
                             <option>Value 1</option>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,8 @@ Route::post('/update-event/{id}',[EventController::class,'update_event']);
 Route::post('/save-event',[EventController::class,'save_event'])->name('save-event');
 Route::get('/all-event',[EventController::class,'all_event']);
 Route::get('/delete-event/{id}',[EventController::class,'delete_event']);
+//save cart
+Route::get('/save-cart',[HomeController::class,'save_cart']);
 
 
 
@@ -41,6 +44,8 @@ Route::get('/contact', function () {
     return view('contact');
 });
 Route::get('/event-detail',[EventController::class,'show_event']);
+//thantoan
+Route::get('/thanh-toan',[HomeController::class,'thanh_toan']);
 
 // Route::get('/', function () {
 //     return view('welcome');
