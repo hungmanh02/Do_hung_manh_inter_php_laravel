@@ -35,9 +35,7 @@ Route::get('/save-cart',[HomeController::class,'save_cart']);
 
 
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [HomeController::class,'index']);
 
 Route::get('/event', [EventController::class,'index']);
 Route::get('/contact', function () {

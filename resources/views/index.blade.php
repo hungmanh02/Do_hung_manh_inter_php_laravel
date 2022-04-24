@@ -44,19 +44,23 @@
                         <p class="text-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
                     <form class="form-datve" action="{{ URL::to('/save-cart') }}">
+                        
+                        @foreach ($events as $event )
                         <select>
-                            <option>Value 1</option>
-                            <option>Value 1</option>
-                            <option>Value 1</option>
+                            <option value="{{ $event->id }}">{{ $event->title }}</option>
+                            
                         </select>
+                        <input type="hidden" value="{{ $event->id }}" name="eventid_hidden" />
+                        @endforeach
+                       
                         <a href="#" class="btn-dropdown"></a>
-                        <input class="input-soluongve" type="number" placeholder="Số lượng vé">
-                        <input class="input-ngaysudung" type="date" placeholder="Ngày sử dụng">
+                        <input class="input-soluongve" type="number" name="quantity" placeholder="Số lượng vé">
+                        <input class="input-ngaysudung" type="date" placeholder="Ngày sử dụng" name="ngay">
                         <a href="#" class="btn-date"></a>
-                        <input class="input-hoten" type="text" placeholder="Họ tên">
-                        <input class="input-sdt" type="text" placeholder="Số điện thoại">
-                        <input class="input-email" type="email" placeholder="Địa chỉ email">
-                        <button class="btn-datve"><a href=""></a></button>
+                        <input class="input-hoten" type="text" placeholder="Họ tên" name="ho_ten">
+                        <input class="input-sdt" type="text" placeholder="Số điện thoại" name="so_dien_thoai">
+                        <input class="input-email" type="email" placeholder="Địa chỉ email" name="email">
+                        <button class="btn-datve" type="submit" ></button>
                     </form>
                 </div>
                 <img class="damsen-logo" src="{{ asset('assets/images/damsen-logo.png') }}">

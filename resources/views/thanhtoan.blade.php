@@ -12,6 +12,7 @@
 <body class="home bg">
     <div class="main">
         <div class="frame">
+            {{ $cart_event=Cart::content(); }}
             
             <div class="content-wraper">
                 
@@ -24,33 +25,37 @@
                         <img class="votay" src="{{ asset('assets/images/votay.png') }}">
                         <img  src="{{ asset('assets/images/khung-1.png') }}">
                         <img class="vecong" src="{{ asset('assets/images/vecong.png') }}">
-                        <form action="" class="form-thanhtoan-ve">
+                        <div class="form-thanhtoan-ve">
+                            @foreach ( $cart_event as $c_event )
+                                
+                            
                             <div class="email-thanhtoan">
                                 <label for="" class="email-thanhtoan-label">Email</label>
-                                    <input class="frame12" type="text" >
+                                    <input class="frame12" type="text"  value="{{ $c_event->options->email }}">
                             </div>
                             <div class="dienthoai-thanhtoan">
                                 <label for="" class="dienthoai-thanhtoan-label">Điện thoại</label>
-                                    <input class="frame11-thanhtoan" type="text" >
+                                    <input class="frame11-thanhtoan" type="text"  value="{{ $c_event->options->so_dien_thoai }}">
                             </div>
                             <div class="lienhe-thanhtoan">
                                 <label for="" class="lienhe-thanhtoan-label">Thông tin liên hệ</label>
-                                    <input class="frame10" type="text" >
+                                    <input class="frame10" type="text"  value="{{ $c_event->options->ho_ten }}">
                             </div>
                             <div class="ngaysudung-thanhtoan">
                                 <label for="" class="lienhe-thanhtoan-label">Ngày sự dụng</label>
-                                    <input class="frame9" type="text" >
+                                    <input class="frame9" type="date" value="{{ $c_event->options->date }}" >
                             </div>
                             <div class="soluong-thanhtoan">
                                 <label for="" class="lienhe-thanhtoan-label">Số lượng</label>
-                                <input class="frame41" type="text" > 
+                                <input class="frame41" type="text"  value="{{ $c_event->qty }}"> 
                                     
                             </div>
                             <div class="sotien-thanhtoan">
                                 <label for="" class="lienhe-thanhtoan-label">Số tiền thanh toán</label>
-                                    <input class="frame5-thanhtoan" type="text" >
+                                    <input class="frame5-thanhtoan" type="text" value="{{Cart::priceTotal()  }}" >
                             </div>
-                        </form>
+                            @endforeach
+                        </div>
                     
                      </div>
                    
