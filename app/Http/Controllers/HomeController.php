@@ -33,12 +33,6 @@ class HomeController extends Controller
         $data['options']['so_dien_thoai']=$sodienthoai;
         $data['options']['email']=$email;
         Cart::add($data);
-        
-        // $cart=Cart::content();
-        // foreach($cart as $c){
-
-        // }
-        // dd($c);
         return Redirect::to('/thanh-toan');
     }
     public function thanh_toan(){
