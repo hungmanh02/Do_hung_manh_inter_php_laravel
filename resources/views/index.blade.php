@@ -54,7 +54,7 @@
                         @endforeach
                        
                         <a href="#" class="btn-dropdown"></a>
-                        <input class="input-soluongve" type="number" name="quantity" placeholder="Số lượng vé">
+                        <input class="input-soluongve" type="number" name="quantity" placeholder="Số lượng vé" value="1">
                         <input class="input-ngaysudung" type="date" placeholder="Ngày sử dụng" name="ngay">
                         <a href="#" class="btn-date"></a>
                         <input class="input-hoten" type="text" placeholder="Họ tên" name="ho_ten">

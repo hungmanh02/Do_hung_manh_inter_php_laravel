@@ -55,7 +55,7 @@ class EventController extends Controller
             return Redirect::to('all-event');
         }
         
-        $data['image']='';
+      
        
         DB::table('events')->insert($data);
         Session::put('message','thêm event thành công');

@@ -10,6 +10,7 @@ class HomeController extends Controller
 {
     public function index(){
         $events=DB::table('events')->get();
+        dd($events);
         return view('index',['events'=>$events]);
     }
     public function save_cart(Request $request){
